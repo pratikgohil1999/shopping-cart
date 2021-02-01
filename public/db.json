@@ -1,0 +1,116 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "sku": "af-1-1-shoe-fX1clV",
+            "title": "Nike AF 1/1 Men's Shoe",
+            "description": "Nike AF 1/1",
+            "availableSizes": [
+                "X",
+                "L",
+                "XL",
+                "XXL"
+            ],
+            "price": 12495,
+            "isFreeShipping": true
+        },
+        {
+            "id": 2,
+            "sku": "air-jordan-1-low-se-asw-shoe-VzTVfz",
+            "title": "Air Jordan 1 Low SE Men's Shoe",
+            "description": "Air Jordan 1 Low SE",
+            "availableSizes": [
+                "X",
+                "M",
+                "L"
+            ],
+            "price": 9295,
+            "isFreeShipping": true
+        },
+        {
+            "id": 3,
+            "sku": "air-max-zephyr-shoe-SDSC8j",
+            "title": "Nike Air Max Zephyr Men's Shoe",
+            "description": "Nike Air Max Zephyr",
+            "availableSizes": [
+                "X",
+                "M",
+                "L"
+            ],
+            "price": 16595,
+            "isFreeShipping": true
+        },
+        {
+            "id": 4,
+            "sku": "custom-nike-air-max-2090-by-you",
+            "title": "Nike Air Max 2090 By You Men's Shoe",
+            "description": "Nike Air Max 2090 By You",
+            "availableSizes": [
+                "XL"
+            ],
+            "price": 13995,
+            "isFreeShipping": false
+        },
+        {
+            "id": 5,
+            "sku": "lebron-witness-5-ep-basketball-shoe-RRFJkZ",
+            "title": "LeBron Witness 5 EP Men's Shoe",
+            "description": "LeBron Witness 5 EP",
+            "availableSizes": [
+                "X",
+                "L",
+                "XL"
+            ],
+            "price": 8295,
+            "isFreeShipping": false
+        },
+        {
+            "id": 6,
+            "sku": "sb-nyjah-free-2-skate-shoe-7tHZJZ",
+            "title": "Nike SB Nyjah Free 2 Men's Shoe",
+            "description": "Nike SB Nyjah Free 2",
+            "availableSizes": [
+                "XL",
+                "XXL"
+            ],
+            "price": 7995,
+            "isFreeShipping": false
+        },
+        {
+            "id": 7,
+            "sku": "sb-zoom-blazer-mid-pro-gt-skate-shoe-PLg8Bw",
+            "title": "Nike SB Zoom Blazer Mid Pro GT Men's Shoe",
+            "description": "Nike SB Zoom Blazer Mid Pro GT",
+            "availableSizes": [
+                "S"
+            ],
+            "style": "Preto com listras brancas",
+            "price": 8295,
+            "isFreeShipping": true
+        },
+        {
+            "id": 8,
+            "sku": "sb-zoom-stefan-janoski-canvas-rm-skate-shoe-Q9bXgF",
+            "title": "Nike SB Zoom Stefan Janoski Canvas RM Men's Shoe",
+            "description": "",
+            "availableSizes": [
+                "XL"
+            ],
+            "style": "Azul escuro",
+            "price": 18.7,
+            "isFreeShipping": false
+        },
+        {
+            "id": 9,
+            "sku": "sb-zoom-stefan-janoski-fl-rm-skate-shoe-kT71ZJ",
+            "title": "Nike SB Zoom Stefan Janoski FL RM Men's Shoe",
+            "description": "",
+            "availableSizes": [
+                "L",
+                "XL"
+            ],
+            "price": 134.9,
+            "isFreeShipping": true
+        }
+    ]
+}
