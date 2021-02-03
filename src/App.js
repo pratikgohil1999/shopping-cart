@@ -6,6 +6,8 @@ import Filter from "./components/Filter";
 import Basket from "./components/Basket";
 import { Navbar } from 'react-bootstrap';
 import { ShoppingCart } from '@material-ui/icons';
+import { Provider } from 'react-redux'
+import store from "./store";
 
 class App extends React.Component {
   constructor(props) {
@@ -22,20 +24,6 @@ class App extends React.Component {
     this.handleRemoveFromCart = this.handleRemoveFromCart.bind(this);
   }
 
-  componentWillMount() {
-    fetch("./db.json").then(res => {
-      console.log('res:----', res);
-      return res.json()
-    })
-      .then(data => {
-        console.log("DAta: ", data);
-        this.setState({
-          products: data.products,
-          filteredProducts: data.products
-        })
-      })
-      .catch(e => console.log("error: ", e))
-  }
 
   handleChangeSort(e) {
     this.setState({ sort: e.target.value });
@@ -103,44 +91,46 @@ class App extends React.Component {
       return count = count + ((item.count / 2));
     });
     return (
-      <div className="App" >
-        <Navbar>
-          <Navbar.Brand>
-            <h1>
-              SHOPPING CART
+      <Provider store={store}>
+        <div className="App" >
+          <Navbar>
+            <Navbar.Brand>
+              <h1>
+                SHOPPING CART
             </h1>
-          </Navbar.Brand>
-          <Navbar.Collapse className="d-flex justify-content-end">
-            <Navbar.Text>
-              <ShoppingCart
-                fontSize="large"
-              />
-              <b>
-                {count}
-              </b>
-            </Navbar.Text>
-          </Navbar.Collapse>
-        </Navbar>
-        <hr />
-        <div>
+            </Navbar.Brand>
+            <Navbar.Collapse className="d-flex justify-content-end">
+              <Navbar.Text>
+                <ShoppingCart
+                  fontSize="large"
+                />
+                <b>
+                  {count}
+                </b>
+              </Navbar.Text>
+            </Navbar.Collapse>
+          </Navbar>
+          <hr />
           <div>
-            <Filter size={this.state.size}
-              sort={this.state.sort}
-              handleChangeSize={this.handleChangeSize}
-              handleChangeSort={this.handleChangeSort}
-              count={this.state.filteredProducts.length}
-            />
-            <Basket
-              cartItems={this.state.cartItems}
-              handleRemoveFromCart={this.handleRemoveFromCart}
-            />
-            <Products
-              products={this.state.filteredProducts}
-              handleAddToCart={this.handleAddToCart}
-            />
+            <div>
+              <Filter size={this.state.size}
+                sort={this.state.sort}
+                handleChangeSize={this.handleChangeSize}
+                handleChangeSort={this.handleChangeSort}
+                count={this.state.filteredProducts.length}
+              />
+              <Basket
+                cartItems={this.state.cartItems}
+                handleRemoveFromCart={this.handleRemoveFromCart}
+              />
+              <Products
+                products={this.state.filteredProducts}
+                handleAddToCart={this.handleAddToCart}
+              />
+            </div>
           </div>
-        </div>
-      </div >
+        </div >
+      </Provider>
     );
   }
 

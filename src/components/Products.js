@@ -1,8 +1,14 @@
 import React from "react";
 import './Products.css';
 import { Card, Button, CardColumns, Row } from "react-bootstrap";
+import { connect } from "react-redux";
+import { fetchProducts } from "../actions/productActions";
 
-export default class Products extends React.Component {
+class Products extends React.Component {
+  componentWillMount() {
+    this.props.fetchProducts()
+  }
+
   render() {
     const productItems = this.props.products.map(product => (
       <Card style={{ height: '40rem' }} key={product.id}>
@@ -42,3 +48,7 @@ export default class Products extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => ({ products: state.products.items });
+
+export default connect(mapStateToProps, { fetchProducts })(Products);
