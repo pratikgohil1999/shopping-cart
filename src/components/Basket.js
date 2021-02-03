@@ -1,8 +1,10 @@
 import React from "react";
 import { ShoppingCart, Delete } from '@material-ui/icons';
 import { Card } from "@material-ui/core";
+import { connect } from "react-redux";
+import { removeFromCart } from '../actions/cartActions';
 
-export default class Basket extends React.Component {
+class Basket extends React.Component {
   render() {
     const { cartItems } = this.props;
     return (
@@ -19,10 +21,10 @@ export default class Basket extends React.Component {
                 <li>
                   <b>
                     {item.title}
-                  </b> X {((item.count) / 2)}= ₹ {item.price * ((item.count) / 2)}
+                  </b> X {(item.count)}= ₹ {item.price * item.count}
                   <Delete
                     fontSize='medium'
-                    onClick={(e) => this.props.handleRemoveFromCart(e, item)}
+                    onClick={(e) => this.props.removeFromCart(this.props.cartItems, item)}
                   />
                 </li>)}
             </ul>
@@ -33,3 +35,9 @@ export default class Basket extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => ({
+  cartItems: state.cart.items
+})
+
+export default connect(mapStateToProps, { removeFromCart })(Basket);
